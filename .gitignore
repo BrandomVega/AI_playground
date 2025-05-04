@@ -1,0 +1,6 @@
+/venv/*
+neural-networks/MLP_data/mlartifacts/*
+neural-networks/MLP_data/mlruns/*
+__pycache__/*
+neural-networks/MLP_data/__pycache__/
+mlruns/*
