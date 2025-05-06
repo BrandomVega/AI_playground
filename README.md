@@ -1,3 +1,3 @@
-# networks_playground
+# AI_PLAYGROUND
 
 ![adv](https://github.com/BrandomVega/networks_playground/blob/main/neural-networks/MLP_data/plt_line.jpg)
