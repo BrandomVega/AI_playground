@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Playground</title>
+</head>
+<body>
+
+  <h1>AI PLAYGROUND</h1>
+  <h3>Topic: Neural Networks</h3>
+
+  <label for="mi-selector">Choose a trained model:</label>
+  <select id="mi-selector">
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+  <br><br>
+
+  <label for="points-x1">X:</label>
+  <input type="range" id="points-x1" name="points-x1" min="-2" max="2" step="0.1"> 
+  <span id="range-value-x1"></span>
+
+  <br><br>
+
+  <label for="points-x2">Y:</label>
+  <input type="range" id="points-x2" name="points-x2" min="-2" max="2" step="0.1"> 
+  <span id="range-value-x2"></span>
+
+  <br><br>
+
+  <h4 id="pred-value">Model Output: </h4>
+
+<div>
+  <img id="dynamic-img" src="/temp-image?ts={{ timestamp }}" />
+
+</div>
+
+
+  <script>
+    const rangeX1 = document.getElementById("points-x1");
+    const rangeX2 = document.getElementById("points-x2");
+    const displayX1 = document.getElementById("range-value-x1");
+    const displayX2 = document.getElementById("range-value-x2");
+    const selector = document.getElementById("mi-selector");
+    const predValue = document.getElementById("pred-value");
+    
+    displayX1.textContent = rangeX1.value;
+    displayX2.textContent = rangeX2.value;
+  
+    function sendRequest() {
+      const selectedModel = selector.value
+      fetch('/predict', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          x1: rangeX1.value,
+          x2: rangeX2.value,
+          model: selectedModel
+        })
+      })
+      .then(response => response.json())  
+      .then(data => {
+        console.log(data.pred); 
+        predValue.textContent = `Model prediction: ${data.pred}`; 
+
+        const img = document.getElementById('dynamic-img');
+        img.src = '/temp-image?ts=' + new Date().getTime();
+      })
+      .catch(error => {
+        console.error('Error:', error); 
+      });
+    }
+
+    rangeX1.addEventListener("input", function () {
+      displayX1.textContent = this.value;
+      sendRequest();
+    });
+  
+    rangeX2.addEventListener("input", function () {
+      displayX2.textContent = this.value;
+      sendRequest();
+    });
+  
+    selector.addEventListener("change", function () {
+      sendRequest();
+    });
+
+  </script>
+  
+</body>
+</html>
