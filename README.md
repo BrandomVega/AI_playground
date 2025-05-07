@@ -6,12 +6,18 @@ Welcome to AI playground, where you can mess around with several models includin
 |---------------------------|----------------------------------|
 
 This abroads from
+
 -Train challenging datasets 
+
 -Experiment with model architectures 
+
 -Experiment with mathematical features inside the models
+
 -Explore interpretability and visualization of models
+
 -Manage ML lifecycle with tools as mlflow
--Develop and manage end to end services, from API integrations to server management and docker based deployments
+
+-Experiment with API integrations, server management and docker based deployments
  
 
 ## Usage
