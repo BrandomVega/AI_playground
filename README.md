@@ -15,10 +15,10 @@ This abroads from
 
 -Explore interpretability and visualization of models
 
--Manage ML lifecycle with tools as mlflow
-
 -Experiment with API integrations, server management and docker based deployments
  
+-Manage ML lifecycle 
+
 
 ## Usage
 1. Clone repository:
