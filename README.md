@@ -43,19 +43,21 @@ This abroads from
     python build_model.py
     ```
 5. Serve the model locally or build a container from your model
+   
     Some useful command lines
     ```bash
     mlflow models serve -m "models:/{MODEL}/1" --port {PORT}
     mlflow models build-docker --model-uri "models:/{MODEL}/1" --name "{NAME}"    
     ```
-6. Choose the page to serve with flask. 
+7. Choose the page to serve with flask.
+   
     From neural_networks
     ```bash
     cd neural-networks && python app.py
     ```
-7. I will update this if i make more games
+9. I will update this if i make more games
 
-8. Go on and
+10. Go on and
     ```bash
     have fun - bv
     ```
