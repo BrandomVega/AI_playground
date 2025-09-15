@@ -5,19 +5,6 @@ Welcome to AI playground, where you can mess around with several models includin
 | ![Challenge](model_5.png) | ![Moving](sigmoidPerceptron.gif) |
 |---------------------------|----------------------------------|
 
-This abroads from
-
--Train challenging datasets 
-
--Experiment with model architectures 
-
--Experiment with mathematical features inside the models
-
--Explore interpretability and visualization of models
-
--Experiment with API integrations, server management and docker based deployments
- 
--Manage ML lifecycle 
 
 
 ## Usage
@@ -57,7 +44,4 @@ This abroads from
     ```
 9. I will update this if i make more games
 
-10. Go on and
-    ```bash
-    have fun - bv
-    ```
+
