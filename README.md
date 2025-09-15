@@ -42,6 +42,6 @@ Welcome to AI playground, where you can mess around with several models includin
     ```bash
     cd neural-networks && python app.py
     ```
-9. I will update this if i make more games
+
 
 
